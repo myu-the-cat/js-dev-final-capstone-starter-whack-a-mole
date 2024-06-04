@@ -298,6 +298,7 @@ function stopGame(){
 */
 function startGame(){
   clearScore();
+  play();
   setDuration(10);
   setEventListeners();
   startTimer();
