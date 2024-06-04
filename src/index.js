@@ -5,6 +5,7 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score');
 const timerDisplay = document.querySelector('#timer');
 const difficultyLevels = document.querySelectorAll("[name='difficulty']");
+const bestScore = document.querySelector('#best');
 
 const audioHit = new Audio(
   "https://github.com/gabrielsanchez/erddiagram/blob/main/hit.mp3?raw=true"
@@ -172,7 +173,18 @@ function toggleVisibility(hole){
 function updateScore() {
   points += 1;
   score.textContent = points;
+  updateBestScore();
+
   return points;
+}
+
+/*
+* updated the best score
+*/
+function updateBestScore(){
+  if (points > bestScore.textContent) {
+    bestScore.textContent = points;
+  }
 }
 
 /**
